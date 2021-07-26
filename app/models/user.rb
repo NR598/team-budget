@@ -4,8 +4,6 @@ class User < ApplicationRecord
   has_secure_password
   has_many :transactions
   has_many :notes, through: :transactions
-  has_many :incomes
-  has_many :notes, through: :incomes
 
   validates :password, presence: true, length: { minimum: 6 }
   validates :name,  presence: true, length: { maximum: 50 }

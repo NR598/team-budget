@@ -3,6 +3,6 @@ class Transaction < ApplicationRecord
   has_many :notes
   belongs_to :user  
   validates :name, presence: true
-  validates :amount, numericality: {less_than: 0}
+  validates :amount, presence: true
 
 end

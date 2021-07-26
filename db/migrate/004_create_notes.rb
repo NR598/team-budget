@@ -3,7 +3,6 @@ class CreateNotes < ActiveRecord::Migration[6.1]
     create_table :notes do |t|
       t.text :body
       t.belongs_to :user
-      t.belongs_to :income 
       t.belongs_to :transaction
     end
   end
