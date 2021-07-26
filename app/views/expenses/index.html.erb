@@ -1,0 +1,26 @@
+<%= render "menu" %>
+<center><h1>All expenses</h1></center>
+
+<center>
+  <% flash.each do |message_type, message| %>
+    <div> <strong><%= message %></strong></div>
+  <% end %>
+
+
+<table class="table table-hover">
+  <tr>
+    <th>User</th>
+    <th>expense</th>
+    <th>Amount</th>
+  </tr>
+  <% @expenses.each do |expense| %>
+    <tr>
+      <td> <%=  %> </td>
+      <td> <%=link_to expense.name,expense%> </td>
+      <td> $<%=expense.amount%> </td> 
+    </tr>
+  <% end %>
+</table>
+</center>
+
+

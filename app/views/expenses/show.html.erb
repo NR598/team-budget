@@ -1,0 +1,17 @@
+<%= render "menu" %>
+
+<h1><%= @expenses.name %></h1>
+
+<p>$<%= @expenses.amount %></p>
+
+<% if authorized_to_edit(@expenses) %>
+    <%= link_to "Edit expense", edit_expense_path,
+                      method: :get %>
+  &nbsp
+    <%= link_to "Delete expense", expense_path(@expenses),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+<% end %> 
+
+
+
