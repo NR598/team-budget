@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :expenses do
-    resources :notes
+    resources :notes, only: [:show, :create]
+  end
+
+  resources :incomes do
+    resources :notes, only: [:show, :create]
   end
 end

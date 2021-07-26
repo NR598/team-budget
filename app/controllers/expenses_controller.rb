@@ -57,9 +57,13 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expenses = Expense.find(params[:id])
-    @expenses.destroy
-
-    redirect_to expenses_path
+    if authorized_to_edit(@expenses)
+      @expenses.destroy  
+      redirect_to expenses_path  
+    else
+      redirect_to root_path
+    end
+    
   end
 
   private

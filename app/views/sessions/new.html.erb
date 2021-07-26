@@ -2,7 +2,7 @@
   <center> <h1>Welcome To Team Budget</h1> </center>
   <h1>Log in</h1>
   <% flash.each do |message_type, message| %>
-    <div> <strong><%= message %></strong></div>
+    <div> <strong><em><%= message %></em></strong></div>
   <% end %>
   <div class="mb-3">
     <%= form_for(:session, url: login_path) do |f| %>
