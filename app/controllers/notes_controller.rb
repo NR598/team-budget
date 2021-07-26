@@ -1,13 +1,20 @@
 class NotesController < ApplicationController
   def create
-    @transactions = Transaction.find(params[:transaction_id])
-    @notes = current_user.notes.create(note_params)
-    @transactions.note.user = current_user.name
-    redirect_to transaction_path(@transactions)
+    if logged_in?
+      @expenses = Expense.find(params[:expense_id])
+      @notes = @expenses.notes.create(note_params)
+      @notes.user_id = session[:user_id]
+      @notes.save
+      binding.pry
+      redirect_to expense_path(@expenses)
+    else
+      redirect_to root_path
+    end
   end
 
   private
     def note_params
-      params.require(:note).permit(:user, :body)
+      params.require(:note).permit(:body)
     end
 end
+

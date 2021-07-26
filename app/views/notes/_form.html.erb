@@ -1,9 +1,14 @@
-<%= form_with model: [ @expenses, @expense.notes.build ] do |f| %>
+<%= form_with model: [ @expenses, @expenses.notes.build ] do |form| %>
+
+  <% @expenses.errors.full_messages_for(:body).each do |message| %>
+    <div><em><%= message %></em></div>
+  <% end %>
+
   <p>
-    <%= f.label :note %><br>
-    <%= f.text_area :body %>
+    <%= form.label :note %><br>
+    <%= form.text_area :body %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= form.submit %>
   </p>
 <% end %>
