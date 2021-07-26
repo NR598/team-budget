@@ -1,20 +1,20 @@
 <%= render "menu" %>
 
-<h1><%= @expenses.name %></h1>
+<h1><%= @transactions.name %></h1>
 
-<h3>$<%= @expenses.amount %></h3>
+<h3>$<%= @transactions.amount %></h3>
 
-<% if authorized_to_edit(@expenses) %>
-    <%= link_to "Edit expense", edit_expense_path,
+<% if authorized_to_edit(@transactions) %>
+    <%= link_to "Edit transaction", edit_transaction_path,
                       method: :get %>
   &nbsp
-    <%= link_to "Delete expense", expense_path(@expenses),
+    <%= link_to "Delete transaction", transaction_path(@transactions),
                       method: :delete,
                       data: { confirm: "Are you sure?" } %>
 <% end %> 
 
 <h4>Notes:</h4>
-<%= render @expenses.notes %>
+<%= render @transactions.notes %>
 
 <%= render 'notes/form' %>
 

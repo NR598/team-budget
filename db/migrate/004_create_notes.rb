@@ -4,7 +4,7 @@ class CreateNotes < ActiveRecord::Migration[6.1]
       t.text :body
       t.belongs_to :user
       t.belongs_to :income 
-      t.belongs_to :expense
+      t.belongs_to :transaction
     end
   end
 end

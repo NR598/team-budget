@@ -1,12 +1,12 @@
 
 
-<%= form_with model: @expenses do |form| %>
+<%= form_with model: @transactions do |form| %>
 
-  <% @expenses.errors.full_messages_for(:name).each do |message| %>
+  <% @transactions.errors.full_messages_for(:name).each do |message| %>
     <div><em><%= message %></em></div>
   <% end %>
 
-  <% @expenses.errors.full_messages_for(:amount).each do |message| %>
+  <% @transactions.errors.full_messages_for(:amount).each do |message| %>
     <div><em><%= message %></em></div>
   <% end %>
 
@@ -16,8 +16,8 @@
   </div>
 
   <div>
-    <%= form.label :Type_Of_expense %>
-    <%= form.select :is_expense, [["Expense", 1], ["Income", 0]] %>
+    <%= form.label :Type_Of_transaction %>
+    <%= form.select :is_transaction, [["Transaction", 1], ["Income", 0]] %>
   </div>
 
   <div>

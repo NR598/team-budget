@@ -1,6 +1,6 @@
-<%= form_with model: [ @expenses, @expenses.notes.build ] do |form| %>
+<%= form_with model: [ @transactions, @transactions.notes.build ] do |form| %>
 
-  <% @expenses.errors.full_messages_for(:body).each do |message| %>
+  <% @transactions.errors.full_messages_for(:body).each do |message| %>
     <div><em><%= message %></em></div>
   <% end %>
 

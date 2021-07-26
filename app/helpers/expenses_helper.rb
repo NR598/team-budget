@@ -1,3 +1,3 @@
-module ExpensesHelper
+module TransactionsHelper
 
 end

@@ -2,8 +2,8 @@ class User < ApplicationRecord
   before_save { email.downcase! }
   before_save { name.capitalize! }
   has_secure_password
-  has_many :expenses
-  has_many :notes, through: :expenses
+  has_many :transactions
+  has_many :notes, through: :transactions
   has_many :incomes
   has_many :notes, through: :incomes
 

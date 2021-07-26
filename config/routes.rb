@@ -7,11 +7,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources :users
-  resources :expenses do
-    resources :notes, only: [:show, :create]
-  end
-
-  resources :incomes do
+  resources :transactions do
     resources :notes, only: [:show, :create]
   end
 end

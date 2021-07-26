@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 4) do
 
-  create_table "expenses", force: :cascade do |t|
+  create_table "transactions", force: :cascade do |t|
     t.string "name"
     t.decimal "amount", precision: 5, scale: 2
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_expenses_on_user_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 4) do
     t.text "body"
     t.integer "user_id"
     t.integer "income_id"
-    t.integer "expense_id"
-    t.index ["expense_id"], name: "index_notes_on_expense_id"
+    t.integer "transaction_id"
+    t.index ["transaction_id"], name: "index_notes_on_transaction_id"
     t.index ["income_id"], name: "index_notes_on_income_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
