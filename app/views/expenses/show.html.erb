@@ -2,7 +2,7 @@
 
 <h1><%= @expenses.name %></h1>
 
-<p>$<%= @expenses.amount %></p>
+<h3>$<%= @expenses.amount %></h3>
 
 <% if authorized_to_edit(@expenses) %>
     <%= link_to "Edit expense", edit_expense_path,
@@ -13,5 +13,7 @@
                       data: { confirm: "Are you sure?" } %>
 <% end %> 
 
+<h4>Notes:</h4>
+<%= render @expenses.notes %>
 
 

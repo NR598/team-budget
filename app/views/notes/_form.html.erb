@@ -1,9 +1,9 @@
-<%= form_with model: [ @transactions, @transactions.notes.build ] do |form| %>
+<%= form_with model: [ @expenses, @expense.notes.build ] do |f| %>
   <p>
-    <%= form.label :note %><br>
-    <%= form.text_area :body %>
+    <%= f.label :note %><br>
+    <%= f.text_area :body %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= f.submit %>
   </p>
 <% end %>
