@@ -1,31 +1,32 @@
 
+<div class = 'form'>
+  <%= form_with model: @transactions do |form| %>
 
-<%= form_with model: @transactions do |form| %>
+    <% @transactions.errors.full_messages_for(:name).each do |message| %>
+      <div><em><%= message %></em></div>
+    <% end %>
 
-  <% @transactions.errors.full_messages_for(:name).each do |message| %>
-    <div><em><%= message %></em></div>
+    <% @transactions.errors.full_messages_for(:amount).each do |message| %>
+      <div><em><%= message %></em></div>
+    <% end %>
+
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.label :Type_Of_transaction %>
+      <%= form.select :is_expense, [["Expense", 1], ["Income", 0]] %>
+    </div>
+
+    <div>
+      <%= form.label :Amount %>
+      <%= form.number_field :amount %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
   <% end %>
-
-  <% @transactions.errors.full_messages_for(:amount).each do |message| %>
-    <div><em><%= message %></em></div>
-  <% end %>
-
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :Type_Of_transaction %>
-    <%= form.select :is_expense, [["Expense", 1], ["Income", 0]] %>
-  </div>
-
-  <div>
-    <%= form.label :Amount %>
-    <%= form.number_field :amount %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
