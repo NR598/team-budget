@@ -1,24 +1,22 @@
-# README
+# Team Budget Web App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This simple web app will allow multiple users to collaborate on financial decisions regarding budgets.
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+Install the root folder in preferred directory. 
+Navigate to the root folder. 
+In the terminal type "bundle" to get required gems.
+    
+## Usage
 
-* System dependencies
+Using the terminal, navigate to root folder.
+Enter "shotgun" into the terminal.
 
-* Configuration
+## Contributing
 
-* Database creation
+Bug reports and pull requests are welcome on GitHub at https://github.com/NR598/team-budget
 
-* Database initialization
+## License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This programs code is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
