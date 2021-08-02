@@ -5,27 +5,32 @@
     <div> <strong><%= message %></strong></div>
   <% end %>
 
-<strong>Net Amount</strong> $<%= total @transactions %>
+<strong>Group Net Amount:</strong> $<%= total @transactions %>
 &nbsp
-<strong>Total Expenses</strong> $<%= total @transactions.expense %>
+<strong>Group Total Expenses:</strong> $<%= total @transactions.expense %>
 &nbsp
-<strong>Total Income</strong> $<%= total @transactions.income %>
+<strong>Group Total Income:</strong> $<%= total @transactions.income %>
+<br>
+<strong>Largest Expense:</strong> <%= user_with_largest_expense @transactions.expense %>, $<%= largest_expense @transactions.expense %>
 &nbsp
-<strong>Largest Transaction</strong> $<%= largest_expense @transactions.expense%>
-
+<strong>Largest Income:</strong> <%= user_with_largest_income @transactions.income %>, $<%= largest_income @transactions.income%>
+<br>
+<br>
 <table class="table table-hover">
-  <tr>
-    <th>User</th>
+  <thead>
+    <th>Users Name</th>
     <th>Transaction</th>
     <th>Amount</th>
-  </tr>
-  <% @transactions.each do |transaction| %>
-    <tr>
-      <td> <%= transaction.user.name %> </td>
-      <td> <%= link_to transaction.name,transaction%> </td>
-      <td> $<%= transaction.amount %> </td> 
-    </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td> <%= transaction.user.name %> </td>
+        <td> <%= link_to transaction.name,transaction%> </td>
+        <td> $<%= transaction.amount %> </td> 
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 </center>
